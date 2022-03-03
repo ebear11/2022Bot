@@ -80,7 +80,7 @@ public class RobotContainer {
   private final ClimberStop m_ClimberStop = new ClimberStop(m_ClimberSubsystem);
 
   
-  private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(new FrontIntakeDown(m_FrontintakeSubsystem), new IntakeOn(m_FrontintakeSubsystem), new intakeBallsCommand(m_intakeSubsystem),new DriveForward(m_driveSubsystem),new TurnBot(m_driveSubsystem),new Aim(m_ShootingSubsystem), new Shoot(m_ShootingSubsystem));
+  //private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(new FrontIntakeDown(m_FrontintakeSubsystem), new IntakeOn(m_FrontintakeSubsystem), new intakeBallsCommand(m_intakeSubsystem),new DriveForward(m_driveSubsystem),new TurnBot(m_driveSubsystem),new Aim(m_ShootingSubsystem), new Shoot(m_ShootingSubsystem));
 
   private Joystick xbox = new Joystick(0);
   private Joystick logitech = new Joystick(1);
@@ -169,7 +169,5 @@ public class RobotContainer {
    *
    * @return the command to run in autonomous
    */
-  public SequentialCommandGroup getAuto(){
-    return AutoCommand;
-  }
+  
 }
