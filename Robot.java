@@ -59,12 +59,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during autonomous. */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_robotContainer.getAuto();
-
-    // schedule the autonomous command (example)
-    
-      m_autonomousCommand.schedule();
-  
+   
   }
   @Override
   public void autonomousPeriodic() {
@@ -77,9 +72,7 @@ public class Robot extends TimedRobot {
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.cancel();
-    }
+    
     UsbCamera camera = CameraServer.startAutomaticCapture();
     camera.setResolution(320, 240);
     
