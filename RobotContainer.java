@@ -11,6 +11,8 @@ import frc.robot.commands.FrontIntakeDown;
 import frc.robot.commands.FrontIntakeUp;
 import frc.robot.commands.IntakeOff;
 import frc.robot.commands.IntakeOn;
+import frc.robot.commands.LiftForward;
+import frc.robot.commands.LiftReverse;
 import frc.robot.commands.Reverse;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.ShooterOff;
@@ -27,6 +29,7 @@ import edu.wpi.first.wpilibj2.command.WaitCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
 import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.PhneumaticsSubsystem;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -50,6 +53,8 @@ public class RobotContainer {
 
   private final ClimberSubsystem m_ClimberSubsystem = new ClimberSubsystem();
 
+  private final PhneumaticsSubsystem m_PhneumaticsSubsystem = new PhneumaticsSubsystem();
+
   private final FrontIntakeUp m_FrontIntakeUp = new FrontIntakeUp(m_FrontintakeSubsystem);
   private final FrontIntakeDown m_FrontIntakeDown = new FrontIntakeDown(m_FrontintakeSubsystem);
   private final IntakeOn m_IntakeOn = new IntakeOn(m_FrontintakeSubsystem);
@@ -61,6 +66,9 @@ public class RobotContainer {
   private final distanceToggle m_distanceToggle = new distanceToggle(m_ShootingSubsystem);
   private final ClimberUp m_ClimberUp = new ClimberUp(m_ClimberSubsystem);
   private final ClimberDown m_ClimberDown = new ClimberDown(m_ClimberSubsystem);
+  private final LiftForward m_LiftForward = new LiftForward(m_PhneumaticsSubsystem);
+  private final LiftReverse m_LiftReverse = new LiftReverse(m_PhneumaticsSubsystem);
+  
   
 //  private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(new FrontIntakeDown(m_FrontintakeSubsystem), new IntakeOn(m_FrontintakeSubsystem), new intakeBallsCommand(m_intakeSubsystem), new DriveForward(m_driveSubsystem), new IntakeOff(m_FrontintakeSubsystem),new FrontIntakeUp(m_FrontintakeSubsystem),new TurnBot(m_driveSubsystem),new Aim(m_ShootingSubsystem), new Shoot(m_ShootingSubsystem));
 private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(new intakeBallsCommand(m_intakeSubsystem), new Shoot(m_ShootingSubsystem), new WaitCommand(5), new DriveForward(m_driveSubsystem), new ShooterOff(m_ShootingSubsystem));
@@ -92,6 +100,8 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
     JoystickButton button10 = new JoystickButton(logitech, 10);
     JoystickButton button11 = new JoystickButton(logitech, 11);
     JoystickButton button12 = new JoystickButton(logitech, 12);
+    JoystickButton buttonA = new JoystickButton(xbox, 1);
+    JoystickButton buttonB = new JoystickButton(xbox, 2);
 
 
     logiUp
@@ -118,6 +128,10 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
       .whenHeld(m_ClimberUp);
     buttonRB
       .whenHeld(m_ClimberDown);
+    buttonA
+      .whenHeld(m_LiftForward);
+    buttonB
+      .whenHeld(m_LiftReverse);
   }
 
   /**
