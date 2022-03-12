@@ -3,9 +3,6 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 // TalonFX for our motor and ControlMode to use a percent for our motors
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import frc.robot.Constants;
-import edu.wpi.first.networktables.NetworkTable;
-import edu.wpi.first.networktables.NetworkTableEntry;
-import edu.wpi.first.networktables.NetworkTableInstance;
 //import com.ctre.phoenix.motorcontrol.can.TalonFX;
 //import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
