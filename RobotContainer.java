@@ -102,6 +102,9 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
     JoystickButton button12 = new JoystickButton(logitech, 12);
     JoystickButton buttonA = new JoystickButton(xbox, 1);
     JoystickButton buttonB = new JoystickButton(xbox, 2);
+    JoystickButton buttonSelect = new JoystickButton(xbox, 7);
+    JoystickButton buttonStart = new JoystickButton(xbox, 8);
+
 
 
     logiUp
