@@ -114,14 +114,4 @@ public class ShootingSubsystem extends SubsystemBase {
     double vel = shooter.getSelectedSensorVelocity();
     return vel;
   }
-    // Encoder encoder = new Encoder(0, 1, false, Encoder.EncodingType.k2X);
-    /*
-    TalonFX shootingMotor = new TalonFX(5);
-
-    
-
-    public double GetEncoderValue(){
-        
-        return shootingMotor.getSelectedSensorPosition();
-    }*/
 }
