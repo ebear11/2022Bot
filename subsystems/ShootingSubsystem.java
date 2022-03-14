@@ -36,7 +36,7 @@ public class ShootingSubsystem extends SubsystemBase {
         shooterIntake.set(ControlMode.PercentOutput, 0);
       }
     }
-    else{
+    else {
     shooter.set(ControlMode.PercentOutput, 0);
     shooterIntake.set(ControlMode.PercentOutput, 0);
     }

@@ -24,7 +24,7 @@ public class FrontIntakeUp extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_FrontIntakeSubsystem.moveIntake("up");
+    m_FrontIntakeSubsystem.moveIntake("stopUp");
     System.out.println("Intake up");
   }
   // Called once the command ends or is interrupted.
