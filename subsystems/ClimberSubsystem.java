@@ -25,17 +25,10 @@ public class ClimberSubsystem extends SubsystemBase {
     leftWinch.set(ControlMode.PercentOutput,0);
     rightWinch.follow(leftWinch);
   }
-  
-  
-  
-    // Encoder encoder = new Encoder(0, 1, false, Encoder.EncodingType.k2X);
-    /*
-    TalonFX shootingMotor = new TalonFX(5);
-
-    
-
-    public double GetEncoderValue(){
-        
-        return shootingMotor.getSelectedSensorPosition();
-    }*/
+  public void leftGo(){
+    leftWinch.set(ControlMode.PercentOutput, Constants.climberSpeed);
+  }
+  public void rightGo(){
+    rightWinch.set(ControlMode.PercentOutput, -Constants.climberSpeed);
+  }
 }

@@ -23,8 +23,8 @@ public class IntakeSubsystem extends SubsystemBase {
     else {
       intake2.set(ControlMode.PercentOutput, 0);
     }
-
   }
+  
   public void Reverse(){
     intake1.set(ControlMode.PercentOutput, -Constants.intakeSpeed);
     intake2.set(ControlMode.PercentOutput, Constants.intakeSpeed);

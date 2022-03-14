@@ -17,13 +17,13 @@ import frc.robot.commands.Reverse;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.ShooterOff;
 import frc.robot.commands.StopIntake;
-import frc.robot.commands.TurnBot;
 import frc.robot.commands.distanceToggle;
 import frc.robot.commands.intakeBallsCommand;
+import frc.robot.commands.leftGo;
+import frc.robot.commands.rightGo;
 import frc.robot.subsystems.ClimberSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.FrontIntakeSubsystem;
-import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.WaitCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
@@ -68,7 +68,8 @@ public class RobotContainer {
   private final ClimberDown m_ClimberDown = new ClimberDown(m_ClimberSubsystem);
   private final LiftForward m_LiftForward = new LiftForward(m_PhneumaticsSubsystem);
   private final LiftReverse m_LiftReverse = new LiftReverse(m_PhneumaticsSubsystem);
-  
+  private final leftGo m_LeftGo = new leftGo(m_ClimberSubsystem);
+  private final rightGo m_RightGo = new rightGo(m_ClimberSubsystem);
   
 //  private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(new FrontIntakeDown(m_FrontintakeSubsystem), new IntakeOn(m_FrontintakeSubsystem), new intakeBallsCommand(m_intakeSubsystem), new DriveForward(m_driveSubsystem), new IntakeOff(m_FrontintakeSubsystem),new FrontIntakeUp(m_FrontintakeSubsystem),new TurnBot(m_driveSubsystem),new Aim(m_ShootingSubsystem), new Shoot(m_ShootingSubsystem));
 private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(new intakeBallsCommand(m_intakeSubsystem), new Shoot(m_ShootingSubsystem), new WaitCommand(5), new DriveForward(m_driveSubsystem), new ShooterOff(m_ShootingSubsystem));
@@ -102,6 +103,9 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
     JoystickButton button12 = new JoystickButton(logitech, 12);
     JoystickButton buttonA = new JoystickButton(xbox, 1);
     JoystickButton buttonB = new JoystickButton(xbox, 2);
+    JoystickButton buttonSelect = new JoystickButton(xbox, 7);
+    JoystickButton buttonStart = new JoystickButton(xbox, 8);
+
 
 
     logiUp
@@ -132,6 +136,10 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
       .whenHeld(m_LiftForward);
     buttonB
       .whenHeld(m_LiftReverse);
+    buttonSelect
+      .whenHeld(m_LeftGo);
+    buttonStart
+      .whenHeld(m_RightGo);
   }
 
   /**
