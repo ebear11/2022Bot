@@ -9,12 +9,10 @@ public class PhneumaticsSubsystem extends SubsystemBase{
 
     private final DoubleSolenoid solenoid= new DoubleSolenoid(PneumaticsModuleType.REVPH,0,1);
  
-    public void release()
-    {
+    public void release() {
         solenoid.set(DoubleSolenoid.Value.kForward);
     }
-    public void pull()
-    {
+    public void pull() {
         solenoid.set(DoubleSolenoid.Value.kReverse);
     }
 }

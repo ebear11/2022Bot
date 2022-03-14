@@ -31,17 +31,4 @@ public class ClimberSubsystem extends SubsystemBase {
   public void rightGo(){
     rightWinch.set(ControlMode.PercentOutput, -Constants.climberSpeed);
   }
-  
-  
-  
-    // Encoder encoder = new Encoder(0, 1, false, Encoder.EncodingType.k2X);
-    /*
-    TalonFX shootingMotor = new TalonFX(5);
-
-    
-
-    public double GetEncoderValue(){
-        
-        return shootingMotor.getSelectedSensorPosition();
-    }*/
 }
