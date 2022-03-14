@@ -25,10 +25,20 @@ public class ClimberSubsystem extends SubsystemBase {
     leftWinch.set(ControlMode.PercentOutput,0);
     rightWinch.follow(leftWinch);
   }
-  public void leftGo(){
-    leftWinch.set(ControlMode.PercentOutput, Constants.climberSpeed);
+  public void leftGo(String direction){
+    if (direction == "up") {
+      leftWinch.set(ControlMode.PercentOutput, Constants.climberSpeed);
+    }
+    else if (direction == "down") {
+      leftWinch.set(ControlMode.PercentOutput, -Constants.climberSpeed);
+    }
   }
-  public void rightGo(){
-    rightWinch.set(ControlMode.PercentOutput, -Constants.climberSpeed);
+  public void rightGo(String direction){
+    if (direction == "up"){
+      rightWinch.set(ControlMode.PercentOutput, -Constants.climberSpeed);
+    }
+    else if (direction == "down") {
+      rightWinch.set(ControlMode.PercentOutput, Constants.climberSpeed);
+    }
   }
 }
