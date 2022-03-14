@@ -18,6 +18,7 @@ public class FrontIntakeSubsystem extends SubsystemBase {
         frontIntake.set(ControlMode.PercentOutput, 0);          
       }      
   }
+
   public void moveIntake(String direction) {
     if (direction == "up") {
         intakeMover.set(ControlMode.PercentOutput, -Constants.intakeMoverSpeed);
@@ -29,16 +30,19 @@ public class FrontIntakeSubsystem extends SubsystemBase {
         intakeMover.set(ControlMode.PercentOutput, 0);
     }
   }
+
   public void Reverse(){
       frontIntake.set(ControlMode.PercentOutput, -Constants.frontIntakeSpeed);
   }
+
   public double getFrontIntakePos(){
       double position = intakeMover.getSelectedSensorPosition();
       return position;
   }
+
   public void setFrontIntakePos(){
     intakeMover.setSelectedSensorPosition(0);
-}
+  }
 
   @Override
   public void periodic() {
