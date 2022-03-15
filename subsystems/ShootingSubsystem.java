@@ -34,6 +34,7 @@ public class ShootingSubsystem extends SubsystemBase {
         shooterIntake.set(ControlMode.PercentOutput, Constants.shooterIntakeSpeed);
       }
       else{
+        System.out.println("shooter intake off");
         shooterIntake.set(ControlMode.PercentOutput, 0);
       }
     }
