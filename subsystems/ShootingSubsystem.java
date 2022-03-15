@@ -28,7 +28,7 @@ public class ShootingSubsystem extends SubsystemBase {
     System.out.println(shooter.getSelectedSensorVelocity());
       if (shooter.getSelectedSensorVelocity() < Constants.velocityThreshold){
         System.out.println("shooterintake on");
-        shooterIntake.set(ControlMode.PercentOutput, -Constants.shooterIntakeSpeed);
+        shooterIntake.set(ControlMode.PercentOutput, Constants.shooterIntakeSpeed);
       }
       else if (shortDistance && shooter.getSelectedSensorVelocity() < Constants.shortVelocityThreshold){
         shooterIntake.set(ControlMode.PercentOutput, Constants.shooterIntakeSpeed);
