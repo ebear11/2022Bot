@@ -15,7 +15,6 @@ package frc.robot;
 public final class Constants {
     public static double aimErrorTolerance = 1;
     public static double autoDistance = -12500;
-    public static double turretSpeed = .5;
     public static double shortShooterSpeed = -.475;
     public static double normalShooterSpeed = -.70;
     public static double shooterIntakeSpeed = -1;
@@ -24,7 +23,7 @@ public final class Constants {
     public static double intakeSpeed = .5;
     public static double intakeMoverSpeed = .17;
     public static double turnAngle = 160;
-    public static double velocityThreshold = -15000;
+    public static double velocityThreshold = 0;
     public static double shortVelocityThreshold = -10000;
     public static double stopUpSpeed = -0.1;
 
