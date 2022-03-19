@@ -9,15 +9,16 @@ public class FrontIntakeSubsystem extends SubsystemBase {
   TalonFX intakeMover = new TalonFX(0);
   TalonSRX frontIntake  = new TalonSRX(6);
   public FrontIntakeSubsystem() {}
-  public void setIntake(boolean on) {
-      if (on) {
-      frontIntake.set(ControlMode.PercentOutput, Constants.frontIntakeSpeed);
 
+  public void setIntake(boolean on) {
+    if (on) {
+    frontIntake.set(ControlMode.PercentOutput, Constants.frontIntakeSpeed);
       }
       else {
         frontIntake.set(ControlMode.PercentOutput, 0);          
       }      
   }
+
   public void moveIntake(String direction) {
     if (direction == "up") {
         intakeMover.set(ControlMode.PercentOutput, -Constants.intakeMoverSpeed);
@@ -28,21 +29,26 @@ public class FrontIntakeSubsystem extends SubsystemBase {
     else if (direction == "stop") {
         intakeMover.set(ControlMode.PercentOutput, 0);
     }
+    else if (direction == "stopUp") {
+        intakeMover.set(ControlMode.PercentOutput,Constants.stopUpSpeed);
+    }
   }
+
   public void Reverse(){
       frontIntake.set(ControlMode.PercentOutput, -Constants.frontIntakeSpeed);
   }
+
   public double getFrontIntakePos(){
       double position = intakeMover.getSelectedSensorPosition();
       return position;
   }
+
   public void setFrontIntakePos(){
     intakeMover.setSelectedSensorPosition(0);
-}
+  }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
-  
 }
