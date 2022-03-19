@@ -110,8 +110,8 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
     JoystickButton buttonB = new JoystickButton(xbox, 2);
     JoystickButton buttonX = new JoystickButton(xbox, 3);
     JoystickButton buttonY = new JoystickButton(xbox, 4);
-    JoystickAnalogButton leftAxis = new JoystickAnalogButton(xbox, 2);
-    JoystickAnalogButton rightAxis = new JoystickAnalogButton(xbox, 3);
+    JoystickAnalogButton leftAxis = new JoystickAnalogButton(xbox, 2, .5);
+    JoystickAnalogButton rightAxis = new JoystickAnalogButton(xbox, 3, .5);
 
     logiUp
       .whileActiveContinuous(m_FrontIntakeUp);
