@@ -20,7 +20,9 @@ import frc.robot.commands.StopIntake;
 import frc.robot.commands.distanceToggle;
 import frc.robot.commands.intakeBallsCommand;
 import frc.robot.commands.leftGo;
+import frc.robot.commands.leftGoDown;
 import frc.robot.commands.rightGo;
+import frc.robot.commands.rightGoDown;
 import frc.robot.subsystems.ClimberSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.FrontIntakeSubsystem;
@@ -30,6 +32,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.PhneumaticsSubsystem;
+import frc.robot.JoystickAnalogButton;
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -70,6 +73,8 @@ public class RobotContainer {
   private final LiftReverse m_LiftReverse = new LiftReverse(m_PhneumaticsSubsystem);
   private final leftGo m_LeftGo = new leftGo(m_ClimberSubsystem);
   private final rightGo m_RightGo = new rightGo(m_ClimberSubsystem);
+  private final leftGoDown m_LeftGoDown = new leftGoDown(m_ClimberSubsystem);
+  private final rightGoDown m_RightGoDown = new rightGoDown(m_ClimberSubsystem);
   
 //  private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(new FrontIntakeDown(m_FrontintakeSubsystem), new IntakeOn(m_FrontintakeSubsystem), new intakeBallsCommand(m_intakeSubsystem), new DriveForward(m_driveSubsystem), new IntakeOff(m_FrontintakeSubsystem),new FrontIntakeUp(m_FrontintakeSubsystem),new TurnBot(m_driveSubsystem),new Aim(m_ShootingSubsystem), new Shoot(m_ShootingSubsystem));
 private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(new intakeBallsCommand(m_intakeSubsystem), new Shoot(m_ShootingSubsystem), new WaitCommand(5), new DriveForward(m_driveSubsystem), new ShooterOff(m_ShootingSubsystem));
@@ -103,10 +108,10 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
     JoystickButton button12 = new JoystickButton(logitech, 12);
     JoystickButton buttonA = new JoystickButton(xbox, 1);
     JoystickButton buttonB = new JoystickButton(xbox, 2);
-    JoystickButton buttonSelect = new JoystickButton(xbox, 7);
-    JoystickButton buttonStart = new JoystickButton(xbox, 8);
-
-
+    JoystickButton buttonX = new JoystickButton(xbox, 3);
+    JoystickButton buttonY = new JoystickButton(xbox, 4);
+    JoystickAnalogButton leftAxis = new JoystickAnalogButton(xbox, 2, .5);
+    JoystickAnalogButton rightAxis = new JoystickAnalogButton(xbox, 3, .5);
 
     logiUp
       .whileActiveContinuous(m_FrontIntakeUp);
@@ -128,18 +133,22 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
       .whenPressed(m_stopintake);
     button4
       .whenPressed(m_distanceToggle);
-    buttonLB
+    buttonY
       .whenHeld(m_ClimberUp);
-    buttonRB
+    buttonX
       .whenHeld(m_ClimberDown);
     buttonA
       .whenHeld(m_LiftForward);
     buttonB
       .whenHeld(m_LiftReverse);
-    buttonSelect
+    buttonLB
       .whenHeld(m_LeftGo);
-    buttonStart
+    buttonRB
       .whenHeld(m_RightGo);
+    leftAxis
+      .whenHeld(m_LeftGoDown);
+    rightAxis
+      .whenHeld(m_RightGoDown);
   }
 
   /**
