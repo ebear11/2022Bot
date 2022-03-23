@@ -24,7 +24,7 @@ public class leftGo extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_ClimberSubsystem.leftGo();
+    m_ClimberSubsystem.leftGo("up");
   }
   @Override
   public void end(boolean interrupted){
