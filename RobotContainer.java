@@ -66,8 +66,8 @@ public class RobotContainer {
   private final Reverse m_Reverse = new Reverse(m_intakeSubsystem,m_FrontintakeSubsystem);
   private final StopIntake m_stopintake = new StopIntake(m_intakeSubsystem);
   private final distanceToggle m_distanceToggle = new distanceToggle(m_ShootingSubsystem);
-  private final ClimberUp m_ClimberUp = new ClimberUp(m_ClimberSubsystem);
-  private final ClimberDown m_ClimberDown = new ClimberDown(m_ClimberSubsystem);
+  // private final ClimberUp m_ClimberUp = new ClimberUp(m_ClimberSubsystem);
+  // private final ClimberDown m_ClimberDown = new ClimberDown(m_ClimberSubsystem);
   private final LiftForward m_LiftForward = new LiftForward(m_PhneumaticsSubsystem);
   private final LiftReverse m_LiftReverse = new LiftReverse(m_PhneumaticsSubsystem);
   private final leftGo m_LeftGo = new leftGo(m_ClimberSubsystem);
@@ -132,10 +132,10 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
       .whenPressed(m_stopintake);
     button4
       .whenPressed(m_distanceToggle);
-    buttonY
-      .whenHeld(m_ClimberUp);
-    buttonX
-      .whenHeld(m_ClimberDown);
+   // buttonY
+    //  .whenHeld(m_ClimberUp);
+   // buttonX
+    //  .whenHeld(m_ClimberDown);
     buttonA
       .whenHeld(m_LiftForward);
     buttonB
