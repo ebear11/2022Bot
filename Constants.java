@@ -15,20 +15,25 @@ package frc.robot;
 public final class Constants {
     public static double aimErrorTolerance = 1;
     public static double autoDistance = -12500;
-    public static double shortShooterSpeed = -.475;
-    public static double normalShooterSpeed = -.70;
+    //Low hub
+    public static double shortShooterSpeed = -.32;
+    //HIGH hub - Shooter motors that shoots the ball from the hood - grey wheels
+    public static double normalShooterSpeed = -.55;
+    // shooterIntakeSpeed set to -1 
     public static double shooterIntakeSpeed = -1;
+    //Pulls the ball into the robot from the intake motor when down
     public static double frontIntakeSpeed = -.5;
     public static double climberSpeed = .8;
-    public static double intakeSpeed = .5;
+    public static double intakeSpeed = .5; 
     public static double intakeMoverSpeed = .17;
     public static double turnAngle = 160;
     public static double velocityThreshold = 0;
     public static double shortVelocityThreshold = -10000;
-    public static double stopUpSpeed = -0.1;
+    // Speed on how fast the ball intake raises 
+    public static double stopUpSpeed = -0.3;
 
     // dont edit
-    public static double intakeStayingUpSpeed=0.01; //speed of the frontIntakeMover when up
+    public static double intakeStayingUpSpeed=0.00; //speed of the frontIntakeMover when up
     public static double frontIntakePosStop = 28600;
     public static double ticks2feetDrive= 0.0022818;
     public static double distanceTocargoRing= 7.2; //distance from the hoops(beginning autonomus position) to the cargo ring(the ball position)
