@@ -13,7 +13,7 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-    public static double aimErrorTolerance = 1;
+    // units the auto goes forward
     public static double autoDistance = -12500;
     //Low hub
     public static double shortShooterSpeed = -.32;
@@ -23,18 +23,22 @@ public final class Constants {
     public static double shooterIntakeSpeed = -1;
     //Pulls the ball into the robot from the intake motor when down
     public static double frontIntakeSpeed = -.5;
+    // speed the climber arms go up
     public static double climberSpeed = .8;
+    // inner intake speed
     public static double intakeSpeed = .5; 
+    // intake arm speed
     public static double intakeMoverSpeed = .17;
+    // angle the robot turns to during auto
     public static double turnAngle = 160;
+    // the speeds the shooter has to get to for the shooter intake motor to go
     public static double velocityThreshold = 0;
     public static double shortVelocityThreshold = -10000;
     // Speed on how fast the ball intake raises 
     public static double stopUpSpeed = -0.3;
 
     // dont edit
-    public static double intakeStayingUpSpeed=0.00; //speed of the frontIntakeMover when up
-    public static double frontIntakePosStop = 28600;
+    public static double frontIntakePosStop = 28600; // where the front intake wont go anywhere
     public static double ticks2feetDrive= 0.0022818;
     public static double distanceTocargoRing= 7.2; //distance from the hoops(beginning autonomus position) to the cargo ring(the ball position)
     
