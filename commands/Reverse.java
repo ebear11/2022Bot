@@ -28,13 +28,11 @@ public class Reverse extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    System.out.println("Intake reverse");
     m_IntakeSubsystem.Reverse();
     m_FrontIntakeSubsystem.Reverse();
   }
     @Override
   public void end(boolean interrupted){
-    System.out.println("Intake reverse end");
       m_FrontIntakeSubsystem.setIntake(true);
       m_IntakeSubsystem.IntakeBalls();
   }
