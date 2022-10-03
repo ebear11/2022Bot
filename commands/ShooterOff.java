@@ -5,14 +5,14 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 /** An example command that uses an example subsystem. */
 public class ShooterOff extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final ShootingSubsystem m_ShootingSubsystem;
+  private final ShootingSubsystem m_shootingSubsystem;
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
   public ShooterOff(ShootingSubsystem subsystem) {
-    m_ShootingSubsystem = subsystem;
+    m_shootingSubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -25,7 +25,7 @@ public class ShooterOff extends CommandBase {
   @Override
   public void execute() {
     System.out.println("shoot");
-     m_ShootingSubsystem.setShooter(false);
+     m_shootingSubsystem.setShooter(false);
   }
   // Called once the command ends or is interrupted.
 }

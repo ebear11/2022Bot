@@ -5,14 +5,14 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 /** An example command that uses an example subsystem. */
 public class LeftGo extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final ClimberSubsystem m_ClimberSubsystem;
+  private final ClimberSubsystem m_climberSubsystem;
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
   public LeftGo(ClimberSubsystem subsystem) {
-    m_ClimberSubsystem = subsystem;
+    m_climberSubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -24,11 +24,11 @@ public class LeftGo extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_ClimberSubsystem.leftGo("up");
+    m_climberSubsystem.leftGo("up");
   }
   @Override
   public void end(boolean interrupted){
-    m_ClimberSubsystem.stop();
+    m_climberSubsystem.stop();
   }
   // Called once the command ends or is interrupted.
 }

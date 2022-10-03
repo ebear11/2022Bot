@@ -5,14 +5,14 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 /** An example command that uses an example subsystem. */
 public class IntakeBallsCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final IntakeSubsystem m_IntakeSubsystem;
+  private final IntakeSubsystem m_intakeSubsystem;
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
   public IntakeBallsCommand(IntakeSubsystem subsystem) {
-    m_IntakeSubsystem = subsystem;
+    m_intakeSubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -25,7 +25,7 @@ public class IntakeBallsCommand extends CommandBase {
   @Override
   public void execute() {
     System.out.println("Intake balls");
-    m_IntakeSubsystem.IntakeBalls();
+    m_intakeSubsystem.IntakeBalls();
   }
   public boolean isFinished() {
     return true;

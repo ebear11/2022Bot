@@ -117,9 +117,9 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
     LogiDown
       .whileActiveContinuous(m_frontIntakeDown);
     button10
-      .whenHeld(m_intakeOn);
+      .whenPressed(m_intakeOn);
     button9
-      .whenHeld(m_intakeOff);
+      .whenPressed(m_intakeOff);
     button3
       .whenHeld(m_reverse);
     buttonTrigger

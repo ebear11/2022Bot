@@ -11,14 +11,14 @@ import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 /** An example command that uses an example subsystem. */
 public class TurnBot extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final DriveSubsystem m_DriveSubsystem;
+  private final DriveSubsystem m_driveSubsystem;
 public ADXRS450_Gyro gyro = new ADXRS450_Gyro();  /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
   public TurnBot(DriveSubsystem subsystem) {
-    m_DriveSubsystem = subsystem;
+    m_driveSubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -33,7 +33,7 @@ public ADXRS450_Gyro gyro = new ADXRS450_Gyro();  /**
   @Override
   public void execute() {
     System.out.println(gyro.getAngle());
-    m_DriveSubsystem.driveBot(.2, .2);
+    m_driveSubsystem.driveBot(.2, .2);
   
 }
 @Override
@@ -45,7 +45,7 @@ public boolean isFinished() {
   }
   public void end(boolean interrupted){
     System.out.println("turn stop");
-    m_DriveSubsystem.driveBot(0, 0);
+    m_driveSubsystem.driveBot(0, 0);
   }
 
 
