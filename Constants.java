@@ -18,7 +18,7 @@ public final class Constants {
     //Low hub
     public static double shortShooterSpeed = -.32;
     //HIGH hub - Shooter motors that shoots the ball from the hood - grey wheels
-    public static double normalShooterSpeed = -1;
+    public static double normalShooterSpeed = -.925;
     // shooterIntakeSpeed set to -1 
     public static double shooterIntakeSpeed = -1;
     //Pulls the ball into the robot from the intake motor when down
