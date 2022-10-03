@@ -64,7 +64,7 @@ public class RobotContainer {
   private final ShooterOff m_shooterOff = new ShooterOff(m_shootingSubsystem);
   private final IntakeOff m_intakeOff = new IntakeOff(m_frontIntakeSubsystem);
   private final Reverse m_reverse = new Reverse(m_intakeSubsystem,m_frontIntakeSubsystem);
-  private final StopIntake m_stopIntake = new StopIntake(m_intakeSubsystem);
+  private final StopIntake m_stopInnerIntake = new StopIntake(m_intakeSubsystem);
   private final DistanceToggle m_distanceToggle = new DistanceToggle(m_shootingSubsystem);
   private final ClimberUp m_climberUp = new ClimberUp(m_climberSubsystem);
   private final ClimberDown m_climberDown = new ClimberDown(m_climberSubsystem);
@@ -121,7 +121,7 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
     button9
       .whenPressed(m_intakeOff);
     button3
-      .whenHeld(m_reverse);
+      .whenPressed(m_reverse);
     buttonTrigger
       .whileActiveContinuous(m_shoot);
     buttonTrigger
@@ -129,7 +129,7 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
     button12
       .whenPressed(m_intakeBallsCommand);
     button11
-      .whenPressed(m_stopIntake);
+      .whenPressed(m_stopInnerIntake);
     button4
       .whenPressed(m_distanceToggle);
     buttonY
@@ -137,9 +137,9 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
     buttonX
       .whenHeld(m_climberDown);
     buttonA
-      .whenHeld(m_liftForward);
+      .whenPressed(m_liftForward);
     buttonB
-      .whenHeld(m_liftReverse);
+      .whenPressed(m_liftReverse);
     buttonLB
       .whenHeld(m_leftGo);
     buttonRB
