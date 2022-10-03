@@ -19,7 +19,7 @@ import frc.robot.commands.ShooterOff;
 import frc.robot.commands.StopIntake;
 import frc.robot.commands.distanceToggle;
 import frc.robot.commands.intakeBallsCommand;
-import frc.robot.commands.leftGo;
+import frc.robot.commands.LeftGo;
 import frc.robot.commands.leftGoDown;
 import frc.robot.commands.rightGo;
 import frc.robot.commands.rightGoDown;
@@ -70,7 +70,7 @@ public class RobotContainer {
   private final ClimberDown m_ClimberDown = new ClimberDown(m_ClimberSubsystem);
   private final LiftForward m_LiftForward = new LiftForward(m_PhneumaticsSubsystem);
   private final LiftReverse m_LiftReverse = new LiftReverse(m_PhneumaticsSubsystem);
-  private final leftGo m_LeftGo = new leftGo(m_ClimberSubsystem);
+  private final LeftGo m_LeftGo = new LeftGo(m_ClimberSubsystem);
   private final rightGo m_RightGo = new rightGo(m_ClimberSubsystem);
   private final leftGoDown m_LeftGoDown = new leftGoDown(m_ClimberSubsystem);
   private final rightGoDown m_RightGoDown = new rightGoDown(m_ClimberSubsystem);
