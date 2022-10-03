@@ -3,7 +3,7 @@ package frc.robot.commands;
 import frc.robot.subsystems.IntakeSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 /** An example command that uses an example subsystem. */
-public class intakeBallsCommand extends CommandBase {
+public class IntakeBallsCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final IntakeSubsystem m_IntakeSubsystem;
   /**
@@ -11,7 +11,7 @@ public class intakeBallsCommand extends CommandBase {
    *
    * @param subsystem The subsystem used by this command.
    */
-  public intakeBallsCommand(IntakeSubsystem subsystem) {
+  public IntakeBallsCommand(IntakeSubsystem subsystem) {
     m_IntakeSubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);

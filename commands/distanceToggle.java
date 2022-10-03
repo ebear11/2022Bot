@@ -4,7 +4,7 @@ import frc.robot.subsystems.ShootingSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 /** An example command that uses an example subsystem. */
-public class distanceToggle extends CommandBase {
+public class DistanceToggle extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final ShootingSubsystem m_ShootingSubsystem;
   /**
@@ -12,7 +12,7 @@ public class distanceToggle extends CommandBase {
    *
    * @param subsystem The subsystem used by this command.
    */
-  public distanceToggle(ShootingSubsystem subsystem) {
+  public DistanceToggle(ShootingSubsystem subsystem) {
     m_ShootingSubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);

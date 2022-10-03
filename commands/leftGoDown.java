@@ -3,7 +3,7 @@ package frc.robot.commands;
 import frc.robot.subsystems.ClimberSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 /** An example command that uses an example subsystem. */
-public class leftGoDown extends CommandBase {
+public class LeftGoDown extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final ClimberSubsystem m_ClimberSubsystem;
   /**
@@ -11,7 +11,7 @@ public class leftGoDown extends CommandBase {
    *
    * @param subsystem The subsystem used by this command.
    */
-  public leftGoDown(ClimberSubsystem subsystem) {
+  public LeftGoDown(ClimberSubsystem subsystem) {
     m_ClimberSubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);

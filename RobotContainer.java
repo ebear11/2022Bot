@@ -17,12 +17,12 @@ import frc.robot.commands.Reverse;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.ShooterOff;
 import frc.robot.commands.StopIntake;
-import frc.robot.commands.distanceToggle;
-import frc.robot.commands.intakeBallsCommand;
+import frc.robot.commands.DistanceToggle;
+import frc.robot.commands.IntakeBallsCommand;
 import frc.robot.commands.LeftGo;
-import frc.robot.commands.leftGoDown;
-import frc.robot.commands.rightGo;
-import frc.robot.commands.rightGoDown;
+import frc.robot.commands.LeftGoDown;
+import frc.robot.commands.RightGo;
+import frc.robot.commands.RightGoDown;
 import frc.robot.subsystems.ClimberSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.FrontIntakeSubsystem;
@@ -47,36 +47,36 @@ public class RobotContainer {
 
   private final IntakeSubsystem m_intakeSubsystem = new IntakeSubsystem();
 
-  private final intakeBallsCommand m_intakeballscommand = new intakeBallsCommand(m_intakeSubsystem);
+  private final IntakeBallsCommand m_intakeBallsCommand = new IntakeBallsCommand(m_intakeSubsystem);
 
-  private final FrontIntakeSubsystem m_FrontintakeSubsystem = new FrontIntakeSubsystem();
+  private final FrontIntakeSubsystem m_frontIntakeSubsystem = new FrontIntakeSubsystem();
 
-  private final ShootingSubsystem m_ShootingSubsystem = new ShootingSubsystem();
+  private final ShootingSubsystem m_shootingSubsystem = new ShootingSubsystem();
 
-  private final ClimberSubsystem m_ClimberSubsystem = new ClimberSubsystem();
+  private final ClimberSubsystem m_climberSubsystem = new ClimberSubsystem();
 
-  private final PhneumaticsSubsystem m_PhneumaticsSubsystem = new PhneumaticsSubsystem();
+  private final PhneumaticsSubsystem m_phneumaticsSubsystem = new PhneumaticsSubsystem();
 
-  private final FrontIntakeUp m_FrontIntakeUp = new FrontIntakeUp(m_FrontintakeSubsystem);
-  private final FrontIntakeDown m_FrontIntakeDown = new FrontIntakeDown(m_FrontintakeSubsystem);
-  private final IntakeOn m_IntakeOn = new IntakeOn(m_FrontintakeSubsystem);
-  private final Shoot m_shoot = new Shoot(m_ShootingSubsystem);
-  private final ShooterOff m_shooterOff = new ShooterOff(m_ShootingSubsystem);
-  private final IntakeOff m_IntakeOff = new IntakeOff(m_FrontintakeSubsystem);
-  private final Reverse m_Reverse = new Reverse(m_intakeSubsystem,m_FrontintakeSubsystem);
-  private final StopIntake m_stopintake = new StopIntake(m_intakeSubsystem);
-  private final distanceToggle m_distanceToggle = new distanceToggle(m_ShootingSubsystem);
-  private final ClimberUp m_ClimberUp = new ClimberUp(m_ClimberSubsystem);
-  private final ClimberDown m_ClimberDown = new ClimberDown(m_ClimberSubsystem);
-  private final LiftForward m_LiftForward = new LiftForward(m_PhneumaticsSubsystem);
-  private final LiftReverse m_LiftReverse = new LiftReverse(m_PhneumaticsSubsystem);
-  private final LeftGo m_LeftGo = new LeftGo(m_ClimberSubsystem);
-  private final rightGo m_RightGo = new rightGo(m_ClimberSubsystem);
-  private final leftGoDown m_LeftGoDown = new leftGoDown(m_ClimberSubsystem);
-  private final rightGoDown m_RightGoDown = new rightGoDown(m_ClimberSubsystem);
+  private final FrontIntakeUp m_frontIntakeUp = new FrontIntakeUp(m_frontIntakeSubsystem);
+  private final FrontIntakeDown m_frontIntakeDown = new FrontIntakeDown(m_frontIntakeSubsystem);
+  private final IntakeOn m_intakeOn = new IntakeOn(m_frontIntakeSubsystem);
+  private final Shoot m_shoot = new Shoot(m_shootingSubsystem);
+  private final ShooterOff m_shooterOff = new ShooterOff(m_shootingSubsystem);
+  private final IntakeOff m_intakeOff = new IntakeOff(m_frontIntakeSubsystem);
+  private final Reverse m_reverse = new Reverse(m_intakeSubsystem,m_frontIntakeSubsystem);
+  private final StopIntake m_stopIntake = new StopIntake(m_intakeSubsystem);
+  private final DistanceToggle m_distanceToggle = new DistanceToggle(m_shootingSubsystem);
+  private final ClimberUp m_climberUp = new ClimberUp(m_climberSubsystem);
+  private final ClimberDown m_climberDown = new ClimberDown(m_climberSubsystem);
+  private final LiftForward m_liftForward = new LiftForward(m_phneumaticsSubsystem);
+  private final LiftReverse m_liftReverse = new LiftReverse(m_phneumaticsSubsystem);
+  private final LeftGo m_leftGo = new LeftGo(m_climberSubsystem);
+  private final RightGo m_rightGo = new RightGo(m_climberSubsystem);
+  private final LeftGoDown m_leftGoDown = new LeftGoDown(m_climberSubsystem);
+  private final RightGoDown m_rightGoDown = new RightGoDown(m_climberSubsystem);
   
 //  private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(new FrontIntakeDown(m_FrontintakeSubsystem), new IntakeOn(m_FrontintakeSubsystem), new intakeBallsCommand(m_intakeSubsystem), new DriveForward(m_driveSubsystem), new IntakeOff(m_FrontintakeSubsystem),new FrontIntakeUp(m_FrontintakeSubsystem),new TurnBot(m_driveSubsystem),new Aim(m_ShootingSubsystem), new Shoot(m_ShootingSubsystem));
-private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(new intakeBallsCommand(m_intakeSubsystem), new Shoot(m_ShootingSubsystem), new WaitCommand(5), new DriveForward(m_driveSubsystem), new ShooterOff(m_ShootingSubsystem));
+private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(new IntakeBallsCommand(m_intakeSubsystem), new Shoot(m_shootingSubsystem), new WaitCommand(5), new DriveForward(m_driveSubsystem), new ShooterOff(m_shootingSubsystem));
 
   private Joystick xbox = new Joystick(0);
   private Joystick logitech = new Joystick(1);
@@ -113,41 +113,41 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
     JoystickAnalogButton rightAxis = new JoystickAnalogButton(xbox, 3, .5);
 
     logiUp
-      .whileActiveContinuous(m_FrontIntakeUp);
+      .whileActiveContinuous(m_frontIntakeDown);
     LogiDown
-      .whileActiveContinuous(m_FrontIntakeDown);
+      .whileActiveContinuous(m_frontIntakeDown);
     button10
-      .whenHeld(m_IntakeOn);
+      .whenHeld(m_intakeOn);
     button9
-      .whenHeld(m_IntakeOff);
+      .whenHeld(m_intakeOff);
     button3
-      .whenHeld(m_Reverse);
+      .whenHeld(m_reverse);
     buttonTrigger
       .whileActiveContinuous(m_shoot);
     buttonTrigger
       .whenReleased(m_shooterOff);
     button12
-      .whenPressed(m_intakeballscommand);
+      .whenPressed(m_intakeBallsCommand);
     button11
-      .whenPressed(m_stopintake);
+      .whenPressed(m_stopIntake);
     button4
       .whenPressed(m_distanceToggle);
     buttonY
-      .whenHeld(m_ClimberUp);
+      .whenHeld(m_climberUp);
     buttonX
-      .whenHeld(m_ClimberDown);
+      .whenHeld(m_climberDown);
     buttonA
-      .whenHeld(m_LiftForward);
+      .whenHeld(m_liftForward);
     buttonB
-      .whenHeld(m_LiftReverse);
+      .whenHeld(m_liftReverse);
     buttonLB
-      .whenHeld(m_LeftGo);
+      .whenHeld(m_leftGo);
     buttonRB
-      .whenHeld(m_RightGo);
+      .whenHeld(m_rightGo);
     leftAxis
-      .whenHeld(m_LeftGoDown);
+      .whenHeld(m_leftGoDown);
     rightAxis
-      .whenHeld(m_RightGoDown);
+      .whenHeld(m_rightGoDown);
   }
 
   /**
