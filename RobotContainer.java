@@ -113,7 +113,7 @@ private final SequentialCommandGroup AutoCommand = new SequentialCommandGroup(ne
     JoystickAnalogButton rightAxis = new JoystickAnalogButton(xbox, 3, .5);
 
     logiUp
-      .whileActiveContinuous(m_frontIntakeDown);
+      .whileActiveContinuous(m_frontIntakeUp);
     LogiDown
       .whileActiveContinuous(m_frontIntakeDown);
     button10
