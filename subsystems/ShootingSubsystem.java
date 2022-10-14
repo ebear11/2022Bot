@@ -13,6 +13,7 @@ public class ShootingSubsystem extends SubsystemBase {
   private TalonFX shooter = new TalonFX(7);
   private TalonFX shooterIntake = new TalonFX(10);
   public boolean shortDistance = false;
+  // gets state of short mode
   public double getDistance(){
     if (shortDistance){
       return Constants.shortShooterSpeed;
@@ -24,25 +25,24 @@ public class ShootingSubsystem extends SubsystemBase {
 
   public void setShooter(boolean isOn){
     if (isOn){
-    shooter.set(ControlMode.PercentOutput,getDistance());
-    System.out.println(shooter.getSelectedSensorVelocity());
-      if (shooter.getSelectedSensorVelocity() < Constants.velocityThreshold){
-        System.out.println("shooterintake on");
-        shooterIntake.set(ControlMode.PercentOutput, Constants.shooterIntakeSpeed);
-      }
-      else if (shortDistance && shooter.getSelectedSensorVelocity() < Constants.shortVelocityThreshold){
-        shooterIntake.set(ControlMode.PercentOutput, Constants.shooterIntakeSpeed);
-      }
-      else{
-        System.out.println("shooter intake off");
-        shooterIntake.set(ControlMode.PercentOutput, 0);
-      }
+      shooter.set(ControlMode.PercentOutput,getDistance());
     }
+    // shooter intake motor is turned off if it is set to off
     else {
     shooter.set(ControlMode.PercentOutput, 0);
     shooterIntake.set(ControlMode.PercentOutput, 0);
     }
   }
+  public void setShooterIntake(boolean isOn){
+    if (isOn){
+      shooterIntake.set(ControlMode.PercentOutput,getDistance());
+    }
+    // shooter intake motor is turned off if it is set to off
+    else {
+    shooterIntake.set(ControlMode.PercentOutput, 0);
+    }
+  }
+  // returns velocity
   public double getVelocity(){
     double vel = shooter.getSelectedSensorVelocity();
     return vel;

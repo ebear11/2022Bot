@@ -8,6 +8,7 @@ public class IntakeSubsystem extends SubsystemBase {
   TalonFX intake1 = new TalonFX(8);
   TalonFX intake2  = new TalonFX(9);
   public IntakeSubsystem() {}
+  // inner intale on or off
   public void IntakeBalls() {
       intake1.set(ControlMode.PercentOutput, Constants.intakeSpeed);
       intake2.set(ControlMode.PercentOutput, -Constants.intakeSpeed);      
@@ -16,14 +17,6 @@ public class IntakeSubsystem extends SubsystemBase {
     intake1.set(ControlMode.PercentOutput, 0);
     intake2.set(ControlMode.PercentOutput, 0);      
 }
-  public void ToggleMiddle(boolean isOn){
-    if (isOn){
-      intake2.set(ControlMode.PercentOutput, -Constants.intakeSpeed);
-    }
-    else {
-      intake2.set(ControlMode.PercentOutput, 0);
-    }
-  }
   
   public void Reverse(){
     intake1.set(ControlMode.PercentOutput, -Constants.intakeSpeed);

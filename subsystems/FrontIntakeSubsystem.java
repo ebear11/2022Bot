@@ -14,11 +14,11 @@ public class FrontIntakeSubsystem extends SubsystemBase {
     if (on) {
     frontIntake.set(ControlMode.PercentOutput, Constants.frontIntakeSpeed);
       }
-      else {
-        frontIntake.set(ControlMode.PercentOutput, 0);          
-      }      
+    else {
+      frontIntake.set(ControlMode.PercentOutput, 0);          
+    }      
   }
-
+// intake moves
   public void moveIntake(String direction) {
     if (direction == "up") {
         intakeMover.set(ControlMode.PercentOutput, -Constants.intakeMoverSpeed);
@@ -29,6 +29,7 @@ public class FrontIntakeSubsystem extends SubsystemBase {
     else if (direction == "stop") {
         intakeMover.set(ControlMode.PercentOutput, 0);
     }
+    // sets up speed to prevent motor from falling down 
     else if (direction == "stopUp") {
         intakeMover.set(ControlMode.PercentOutput,Constants.stopUpSpeed);
     }
@@ -37,12 +38,12 @@ public class FrontIntakeSubsystem extends SubsystemBase {
   public void Reverse(){
       frontIntake.set(ControlMode.PercentOutput, -Constants.frontIntakeSpeed);
   }
-
+// gets front intake pos
   public double getFrontIntakePos(){
       double position = intakeMover.getSelectedSensorPosition();
       return position;
   }
-
+  // resets posotion (doesnt work properly )
   public void setFrontIntakePos(){
     intakeMover.setSelectedSensorPosition(0);
   }
