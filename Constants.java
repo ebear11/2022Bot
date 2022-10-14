@@ -32,7 +32,7 @@ public final class Constants {
     // angle the robot turns to during auto
     public static double turnAngle = 160;
     // the speeds the shooter has to get to for the shooter intake motor to go
-    public static double velocityThreshold = -14000;
+    public static double velocityThreshold = -16000;
     public static double shortVelocityThreshold = -10000;
     // Speed on how fast the ball intake raises 
     public static double stopUpSpeed = -0.3;
