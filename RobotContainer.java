@@ -123,7 +123,7 @@ private final SequentialCommandGroup autoCommand = new SequentialCommandGroup(ne
     button3
       .whenPressed(m_reverse);
     buttonTrigger
-      .whileActiveContinuous(m_shoot);
+      .whenHeld(m_shoot);
     buttonTrigger
       .whenReleased(m_shooterOff);
     button12

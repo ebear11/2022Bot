@@ -27,5 +27,10 @@ public class ShooterOff extends CommandBase {
     System.out.println("shooter off");
      m_shootingSubsystem.setShooter(false);
   }
+  @Override
+  public boolean isFinished(){
+    return true;
+  }
+  
   // Called once the command ends or is interrupted.
 }

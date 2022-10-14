@@ -14,11 +14,11 @@ package frc.robot;
  */
 public final class Constants {
     // units the auto goes forward
-    public static double autoDistance = -12500;
+    public static double autoDistance = -15000;
     //Low hub
     public static double shortShooterSpeed = -.32;
     //HIGH hub - Shooter motors that shoots the ball from the hood - grey wheels
-    public static double normalShooterSpeed = -.925;
+    public static double normalShooterSpeed = -.825;
     // shooterIntakeSpeed set to -1 
     public static double shooterIntakeSpeed = -1;
     //Pulls the ball into the robot from the intake motor when down

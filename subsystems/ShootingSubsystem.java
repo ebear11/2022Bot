@@ -25,23 +25,20 @@ public class ShootingSubsystem extends SubsystemBase {
 
   public void setShooter(boolean isOn){
     if (isOn){
-      // sets speed of motor based on short mode 
-    shooter.set(ControlMode.PercentOutput,getDistance());
-    System.out.println(shooter.getSelectedSensorVelocity());
-    // if shooter is below threshold the shooterintake motor does not go until the threshhold has been met 
-      if (shooter.getSelectedSensorVelocity() < Constants.velocityThreshold){
-        shooterIntake.set(ControlMode.PercentOutput, Constants.shooterIntakeSpeed);
-      }
-      else if (shortDistance && shooter.getSelectedSensorVelocity() < Constants.shortVelocityThreshold){
-        shooterIntake.set(ControlMode.PercentOutput, Constants.shooterIntakeSpeed);
-      }
-      else{
-        shooterIntake.set(ControlMode.PercentOutput, 0);
-      }
+      shooter.set(ControlMode.PercentOutput,getDistance());
     }
     // shooter intake motor is turned off if it is set to off
     else {
     shooter.set(ControlMode.PercentOutput, 0);
+    shooterIntake.set(ControlMode.PercentOutput, 0);
+    }
+  }
+  public void setShooterIntake(boolean isOn){
+    if (isOn){
+      shooterIntake.set(ControlMode.PercentOutput,getDistance());
+    }
+    // shooter intake motor is turned off if it is set to off
+    else {
     shooterIntake.set(ControlMode.PercentOutput, 0);
     }
   }

@@ -24,8 +24,12 @@ public class StopIntake extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    System.out.println("Intake balls");
+    System.out.println("Stop Intake balls");
     m_intakeSubsystem.StopIntake();;
+  }
+  @Override
+  public boolean isFinished() {
+    return false;
   }
 
   // Called once the command ends or is interrupted.
