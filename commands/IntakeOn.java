@@ -5,14 +5,14 @@ import frc.robot.subsystems.FrontIntakeSubsystem;
 /** An example command that uses an example subsystem. */
 public class IntakeOn extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final FrontIntakeSubsystem m_FrontIntakeSubsystem;
+  private final FrontIntakeSubsystem m_frontIntakeSubsystem;
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
   public IntakeOn(FrontIntakeSubsystem subsystem) {
-    m_FrontIntakeSubsystem = subsystem;
+    m_frontIntakeSubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -25,7 +25,7 @@ public class IntakeOn extends CommandBase {
   @Override
   public void execute() {
     System.out.println("Intake On");
-    m_FrontIntakeSubsystem.setIntake(true);
+    m_frontIntakeSubsystem.setIntake(true);
   }
   public boolean isFinished() {
     return true;

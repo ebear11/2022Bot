@@ -3,16 +3,16 @@ package frc.robot.commands;
 import frc.robot.subsystems.ClimberSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 /** An example command that uses an example subsystem. */
-public class leftGoDown extends CommandBase {
+public class LeftGoDown extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final ClimberSubsystem m_ClimberSubsystem;
+  private final ClimberSubsystem m_climberSubsystem;
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public leftGoDown(ClimberSubsystem subsystem) {
-    m_ClimberSubsystem = subsystem;
+  public LeftGoDown(ClimberSubsystem subsystem) {
+    m_climberSubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -24,11 +24,11 @@ public class leftGoDown extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_ClimberSubsystem.leftGo("down");
+    m_climberSubsystem.leftGo("down");
   }
   @Override
   public void end(boolean interrupted){
-    m_ClimberSubsystem.stop();
+    m_climberSubsystem.stop();
   }
   // Called once the command ends or is interrupted.
 }

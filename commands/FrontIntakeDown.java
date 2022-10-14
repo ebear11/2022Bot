@@ -6,31 +6,31 @@ import frc.robot.subsystems.FrontIntakeSubsystem;
 /** An example command that uses an example subsystem. */
 public class FrontIntakeDown extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final FrontIntakeSubsystem m_FrontIntakeSubsystem;
+  private final FrontIntakeSubsystem m_frontIntakeSubsystem;
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
   public FrontIntakeDown(FrontIntakeSubsystem subsystem) {
-    m_FrontIntakeSubsystem = subsystem;
+    m_frontIntakeSubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {m_FrontIntakeSubsystem.setFrontIntakePos();}
+  public void initialize() {m_frontIntakeSubsystem.setFrontIntakePos();}
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    System.out.println("Intake down " + "Intake Pos: " + m_FrontIntakeSubsystem.getFrontIntakePos());
-    m_FrontIntakeSubsystem.moveIntake("down");
+    System.out.println("Intake down " + "Intake Pos: " + m_frontIntakeSubsystem.getFrontIntakePos());
+    m_frontIntakeSubsystem.moveIntake("down");
   }
   @Override
  public boolean isFinished() {
-     if (m_FrontIntakeSubsystem.getFrontIntakePos() > Constants.frontIntakePosStop){
+     if (m_frontIntakeSubsystem.getFrontIntakePos() > Constants.frontIntakePosStop){
        return true;
      }
      else {return false;}
@@ -40,7 +40,7 @@ public class FrontIntakeDown extends CommandBase {
   @Override
   public void end(boolean interrupted){
     System.out.println("Intake stop");
-      m_FrontIntakeSubsystem.moveIntake("stop");
+      m_frontIntakeSubsystem.moveIntake("stop");
   }
 
 }

@@ -13,18 +13,21 @@ public class ClimberSubsystem extends SubsystemBase {
   
   private TalonFX leftWinch = new TalonFX(11);
   private TalonFX rightWinch = new TalonFX(12);
+  // climbers both go up
   public void climb(){
       leftWinch.set(ControlMode.PercentOutput, Constants.climberSpeed);
       rightWinch.follow(leftWinch);
   }
+  // climbers both go down
   public void retract(){
     leftWinch.set(ControlMode.PercentOutput, -Constants.climberSpeed);
     rightWinch.follow(leftWinch);
   }
   public void stop(){
     leftWinch.set(ControlMode.PercentOutput,0);
-    rightWinch.follow(leftWinch);
+    rightWinch.set(ControlMode.PercentOutput,0);
   }
+  // right and left go independently 
   public void leftGo(String direction){
     if (direction == "up") {
       leftWinch.set(ControlMode.PercentOutput, Constants.climberSpeed);

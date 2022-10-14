@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.Joystick;
 /** An example command that uses an example subsystem. */
 public class DriveCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final DriveSubsystem m_DriveSubsystem;
+  private final DriveSubsystem m_driveSubsystem;
   Joystick xbox = new Joystick(0);
   /**
    * Creates a new ExampleCommand.
@@ -18,7 +18,7 @@ public class DriveCommand extends CommandBase {
    * @param subsystem The subsystem used by this command.
    */
   public DriveCommand(DriveSubsystem subsystem) {
-    m_DriveSubsystem = subsystem;
+    m_driveSubsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
   }
@@ -30,7 +30,7 @@ public class DriveCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-     m_DriveSubsystem.driveBot(-xbox.getRawAxis(1)/1.5, xbox.getRawAxis(5)/1.5);
+     m_driveSubsystem.driveBot(-xbox.getRawAxis(1)/1.5, xbox.getRawAxis(5)/1.5);
   }
 
   // Called once the command ends or is interrupted.
